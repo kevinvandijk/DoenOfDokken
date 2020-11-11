@@ -1,19 +1,10 @@
 import React from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createStackNavigator();
+import Home from './screens/Home';
 
-const Home = () => {
-  return (
-    <SafeAreaView>
-      <View>
-        <Text>Doen of Dokken</Text>
-      </View>
-    </SafeAreaView>
-  );
-};
+const Stack = createStackNavigator();
 
 const App: () => React$Node = () => {
   return (
