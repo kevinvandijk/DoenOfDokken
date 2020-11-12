@@ -33,7 +33,7 @@ const Home = () => {
           />
         </View>
         <View style={style.footer}>
-          <Button />
+          <Button label="Begin" />
         </View>
       </SafeAreaView>
     </View>
