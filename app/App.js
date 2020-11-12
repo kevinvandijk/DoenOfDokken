@@ -3,6 +3,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './screens/Home';
+import SetGoal from './screens/SetGoal';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ const App: () => React$Node = () => {
         initialRouteName="Home"
         screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="SetGoal" component={SetGoal} />
       </Stack.Navigator>
     </NavigationContainer>
   );

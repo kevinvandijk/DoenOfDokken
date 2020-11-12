@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 const HomeStyles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 30,
   },
 
   safeContainer: {
@@ -22,7 +23,7 @@ const HomeStyles = StyleSheet.create({
   },
 
   header: {
-    marginTop: 31,
+    marginTop: 30,
   },
 
   headerText: {
@@ -42,12 +43,41 @@ const HomeStyles = StyleSheet.create({
   },
 
   content: {
-    marginTop: -31,
+    marginTop: -30,
   },
 
   footer: {
-    width: '100%',
+    flexDirection: 'row',
   },
 });
 
-export { HomeStyles };
+const ScreenStyles = StyleSheet.create({
+  safeContainer: {
+    flex: 1,
+  },
+
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+
+  header: {
+    paddingTop: 30,
+  },
+
+  body: {
+    paddingHorizontal: 40,
+  },
+
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 52,
+  },
+
+  footerSpacer: {
+    width: 27,
+  },
+});
+
+export { HomeStyles, ScreenStyles };
