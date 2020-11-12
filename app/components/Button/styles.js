@@ -9,10 +9,15 @@ const ButtonStyles = StyleSheet.create({
     backgroundColor: '#2699fb',
     paddingVertical: 18,
     alignItems: 'center',
+    paddingHorizontal: 30,
   },
 
   containerInverted: {
     backgroundColor: '#fff',
+  },
+
+  containerCompact: {
+    flex: 0,
   },
 
   label: {

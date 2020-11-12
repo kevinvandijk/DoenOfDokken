@@ -61,6 +61,10 @@ const ScreenStyles = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
+  containerCentered: {
+    justifyContent: 'center',
+  },
+
   header: {
     paddingTop: 30,
   },
@@ -69,9 +73,13 @@ const ScreenStyles = StyleSheet.create({
     paddingHorizontal: 40,
   },
 
+  bodySpacer: {
+    height: 32,
+  },
+
   footer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     paddingHorizontal: 52,
   },
 

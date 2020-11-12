@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
 import SetGoal from './screens/SetGoal';
 import SelectCheckupBuddy from './screens/SelectCheckupBuddy';
+import PaymentReceived from './screens/PaymentReceived';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ const App: () => React$Node = () => {
           name="SelectCheckupBuddy"
           component={SelectCheckupBuddy}
         />
+        <Stack.Screen name="PaymentReceived" component={PaymentReceived} />
       </Stack.Navigator>
     </NavigationContainer>
   );

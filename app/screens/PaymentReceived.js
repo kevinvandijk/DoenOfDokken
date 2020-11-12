@@ -6,25 +6,22 @@ import Button from '../components/Button/Button';
 import ScreenTitle from '../components/ScreenTitle/ScreenTitle';
 import TextInput from '../components/TextInput/TextInput';
 
-const SelectCheckupBuddy = ({ navigation }) => {
+const PaymentReceived = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeContainer}>
-      <View style={styles.container}>
+      <View style={[styles.container, styles.containerCentered]}>
         <View style={styles.header}>
           <ScreenTitle
-            mainText="Wie gaat je controleren?"
-            subText="Laat het e-mailadres achter van je controle buddy."
+            mainText="Betaald!"
+            subText="Succes met het behalen van je doel!"
           />
         </View>
-        <View style={styles.body}>
-          <TextInput label="E-MAIL CONTROLE BUDDY" type="email" />
-        </View>
+        <View style={styles.bodySpacer} />
         <View style={styles.footer}>
-          <Button onPress={navigation.goBack} inverted label="Vorige" />
-          <View style={styles.footerSpacer} />
           <Button
-            label="Volgende"
-            onPress={() => navigation.navigate('PaymentReceived')}
+            label="Naar overzicht"
+            onPress={() => navigation.navigate('Home')}
+            compact
           />
         </View>
       </View>
@@ -32,4 +29,4 @@ const SelectCheckupBuddy = ({ navigation }) => {
   );
 };
 
-export default SelectCheckupBuddy;
+export default PaymentReceived;
