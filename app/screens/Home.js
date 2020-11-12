@@ -5,7 +5,7 @@ import Pie from 'react-native-pie';
 import { HomeStyles as style } from './styles';
 import Button from '../components/Button/Button';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <View style={style.container}>
       <View style={style.background} />
@@ -33,7 +33,10 @@ const Home = () => {
           />
         </View>
         <View style={style.footer}>
-          <Button label="Begin" />
+          <Button
+            label="Begin"
+            onPress={() => navigation.navigate('SetGoal')}
+          />
         </View>
       </SafeAreaView>
     </View>

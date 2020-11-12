@@ -6,7 +6,7 @@ import Button from '../components/Button/Button';
 import ScreenTitle from '../components/ScreenTitle/ScreenTitle';
 import TextInput from '../components/TextInput/TextInput';
 
-const SetGoal = () => {
+const SetGoal = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
@@ -20,7 +20,7 @@ const SetGoal = () => {
           <TextInput label="Je doel" />
         </View>
         <View style={styles.footer}>
-          <Button inverted label="Vorige" />
+          <Button onPress={navigation.goBack} inverted label="Vorige" />
           <View style={styles.footerSpacer} />
           <Button label="Volgende" />
         </View>
