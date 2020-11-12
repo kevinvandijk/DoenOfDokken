@@ -6,30 +6,27 @@ import Button from '../components/Button/Button';
 import ScreenTitle from '../components/ScreenTitle/ScreenTitle';
 import TextInput from '../components/TextInput/TextInput';
 
-const SetGoal = ({ navigation }) => {
+const SelectCheckupBuddy = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
         <View style={styles.header}>
           <ScreenTitle
-            mainText="Aan welk doel wil je werken?"
-            subText="Beschrijf het doel waar je aan wilt werken in 1 zin."
+            mainText="Wie gaat je controleren?"
+            subText="Laat het e-mailadres achter van je controle buddy."
           />
         </View>
         <View style={styles.body}>
-          <TextInput label="Je doel" />
+          <TextInput label="E-MAIL CONTROLE BUDDY" type="email" />
         </View>
         <View style={styles.footer}>
           <Button onPress={navigation.goBack} inverted label="Vorige" />
           <View style={styles.footerSpacer} />
-          <Button
-            label="Volgende"
-            onPress={() => navigation.navigate('SelectCheckupBuddy')}
-          />
+          <Button label="Volgende" />
         </View>
       </View>
     </SafeAreaView>
   );
 };
 
-export default SetGoal;
+export default SelectCheckupBuddy;
