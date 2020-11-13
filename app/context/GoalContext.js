@@ -6,7 +6,15 @@ const initialState = {
   description: null,
 };
 
-const reducer = (state, action) => {};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'SET_GOAL_DESCRIPTION':
+      return {
+        ...state,
+        description: action.description,
+      };
+  }
+};
 
 const GoalProvider = ({ children }) => {
   const [goal, dispatch] = useReducer(reducer, initialState);

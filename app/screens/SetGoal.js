@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { SafeAreaView, View } from 'react-native';
+import { SafeAreaView, View, Alert } from 'react-native';
 
 import { ScreenStyles as styles } from './styles';
 import { GoalContext } from '../context/GoalContext';
@@ -8,10 +8,25 @@ import ScreenTitle from '../components/ScreenTitle/ScreenTitle';
 import TextInput from '../components/TextInput/TextInput';
 
 const SetGoal = ({ navigation }) => {
-  const { goal } = useContext(GoalContext);
+  const { goal, dispatch } = useContext(GoalContext);
   const [goalDescription, onChangeGoalDescription] = useState(goal.description);
 
+  const saveValue = (description) => {
+    dispatch({ type: 'SET_GOAL_DESCRIPTION', description });
+  };
+
+  const previousScreen = () => {
+    saveValue(goalDescription || null);
+
+    navigation.goBack();
+  };
   const nextScreen = () => {
+    if (!goalDescription) {
+      Alert.alert('Geen doel ingevuld', 'Vul een doel in om verder te gaan.');
+      return;
+    }
+
+    saveValue();
     navigation.navigate('AddMoney');
   };
 
@@ -32,7 +47,7 @@ const SetGoal = ({ navigation }) => {
           />
         </View>
         <View style={styles.footer}>
-          <Button onPress={navigation.goBack} inverted label="Vorige" />
+          <Button onPress={previousScreen} inverted label="Vorige" />
           <View style={styles.footerSpacer} />
           <Button label="Volgende" onPress={nextScreen} />
         </View>
