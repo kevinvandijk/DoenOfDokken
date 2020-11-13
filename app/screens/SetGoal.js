@@ -16,7 +16,9 @@ const SetGoal = ({ navigation }) => {
   };
 
   const previousScreen = () => {
-    saveValue(goalDescription || null);
+    if (goalDescription) {
+      saveValue(goalDescription);
+    }
 
     navigation.goBack();
   };
@@ -27,7 +29,7 @@ const SetGoal = ({ navigation }) => {
       return;
     }
 
-    saveValue();
+    saveValue(goalDescription);
     navigation.navigate('AddMoney');
   };
 

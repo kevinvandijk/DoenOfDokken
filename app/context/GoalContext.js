@@ -5,6 +5,7 @@ export const GoalContext = createContext();
 const initialState = {
   description: null,
   checkupBuddy: null,
+  money: 15,
 };
 
 const reducer = (state, action) => {
@@ -13,6 +14,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         description: action.description,
+      };
+
+    case 'SET_CHECKUP_BUDDY':
+      return {
+        ...state,
+        checkupBuddy: action.checkupBuddy,
+      };
+
+    case 'SET_MONEY':
+      return {
+        ...state,
+        money: action.money,
       };
   }
 };

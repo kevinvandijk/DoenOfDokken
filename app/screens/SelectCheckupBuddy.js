@@ -12,11 +12,13 @@ const SelectCheckupBuddy = ({ navigation }) => {
   const [checkupBuddy, onChangeCheckupBuddy] = useState(goal.checkupBuddy);
 
   const saveValue = (value) => {
-    dispatch({ type: 'SET_GOAL_DESCRIPTION', checkupBuddy: value });
+    dispatch({ type: 'SET_CHECKUP_BUDDY', checkupBuddy: value });
   };
 
   const previousScreen = () => {
-    saveValue(checkupBuddy || null);
+    if (checkupBuddy) {
+      saveValue(checkupBuddy);
+    }
 
     navigation.goBack();
   };
@@ -30,7 +32,7 @@ const SelectCheckupBuddy = ({ navigation }) => {
       return;
     }
 
-    saveValue();
+    saveValue(checkupBuddy);
     navigation.navigate('PaymentReceived');
   };
 
