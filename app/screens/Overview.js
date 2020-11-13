@@ -7,7 +7,7 @@ import Button from '../components/Button/Button';
 import ScreenTitle from '../components/ScreenTitle/ScreenTitle';
 import DateRangePicker from '../components/DateRangePicker/DateRangePicker';
 
-const SelectCheckupBuddy = ({ navigation }) => {
+const Overview = ({ navigation }) => {
   const { goal } = useContext(GoalContext);
 
   return (
@@ -57,4 +57,4 @@ const SelectCheckupBuddy = ({ navigation }) => {
   );
 };
 
-export default SelectCheckupBuddy;
+export default Overview;
