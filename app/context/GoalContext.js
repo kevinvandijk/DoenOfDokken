@@ -37,6 +37,9 @@ const reducer = (state, action) => {
         endDate: action.endDate,
       };
 
+    case 'RESET':
+      return initialState;
+
     default:
       return state;
   }
