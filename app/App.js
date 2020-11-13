@@ -8,6 +8,7 @@ import SetGoal from './screens/SetGoal';
 import AddMoney from './screens/AddMoney';
 import SelectDeadline from './screens/SelectDeadline';
 import SelectCheckupBuddy from './screens/SelectCheckupBuddy';
+import Overview from './screens/Overview';
 import PaymentReceived from './screens/PaymentReceived';
 
 const Stack = createStackNavigator();
@@ -35,6 +36,7 @@ const App: () => React$Node = () => {
             name="SelectCheckupBuddy"
             component={SelectCheckupBuddy}
           />
+          <Stack.Screen name="Overview" component={Overview} />
           <Stack.Screen name="PaymentReceived" component={PaymentReceived} />
         </Stack.Navigator>
       </NavigationContainer>

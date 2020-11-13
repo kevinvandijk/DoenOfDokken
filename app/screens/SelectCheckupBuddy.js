@@ -33,7 +33,7 @@ const SelectCheckupBuddy = ({ navigation }) => {
     }
 
     saveValue(checkupBuddy);
-    navigation.navigate('PaymentReceived');
+    navigation.navigate('Overview');
   };
 
   return (

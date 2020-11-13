@@ -88,4 +88,53 @@ const ScreenStyles = StyleSheet.create({
   },
 });
 
-export { HomeStyles, ScreenStyles };
+const OverviewStyles = StyleSheet.create({
+  descriptionContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 8,
+    borderBottomWidth: 2,
+    borderBottomColor: '#bce0fd',
+  },
+
+  descriptionLabel: {
+    marginRight: 23,
+    fontFamily: 'Arial',
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#2699fb',
+  },
+
+  descriptionText: {
+    marginTop: 2,
+    fontFamily: 'Arial',
+    fontSize: 10,
+    fontWeight: 'bold',
+    color: '#2699fb',
+  },
+
+  moneyContainer: {
+    alignItems: 'center',
+  },
+
+  moneyLabel: {
+    fontFamily: 'Arial',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#2699fb',
+    marginBottom: 10,
+  },
+
+  moneyText: {
+    fontFamily: 'Arial',
+    fontSize: 40,
+    fontWeight: 'bold',
+    color: '#2699fb',
+  },
+
+  spacer: {
+    height: 40,
+  },
+});
+
+export { HomeStyles, ScreenStyles, OverviewStyles };

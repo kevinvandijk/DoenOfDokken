@@ -27,6 +27,7 @@ const DateRangePicker = ({
   changeStartDate,
   endDate,
   changeEndDate,
+  readOnly,
 }) => {
   const today = new Date();
   const defaultEndDate = new Date(startDate);
@@ -65,25 +66,27 @@ const DateRangePicker = ({
     ? new Intl.DateTimeFormat(locale).format(endDate)
     : '-';
 
+  const PickerComponent = readOnly ? View : TouchableOpacity;
+
   return (
     <View style={styles.container}>
       <View style={styles.datePickerContainer}>
         <View style={styles.datePicker}>
           <Text style={styles.labelText}>Begindatum</Text>
-          <TouchableOpacity
+          <PickerComponent
             onPress={showStartPicker}
             style={styles.datePickerFieldContainer}>
             <Text style={styles.datePickerFieldText}>{startLabel}</Text>
-          </TouchableOpacity>
+          </PickerComponent>
         </View>
         <View style={styles.spacer} />
         <View style={styles.datePicker}>
           <Text style={styles.labelText}>Einddatum</Text>
-          <TouchableOpacity
+          <PickerComponent
             onPress={showEndPicker}
             style={styles.datePickerFieldContainer}>
             <Text style={styles.datePickerFieldText}>{endLabel}</Text>
-          </TouchableOpacity>
+          </PickerComponent>
         </View>
       </View>
       {showPicker !== 'none' && (
