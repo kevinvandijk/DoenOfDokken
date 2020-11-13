@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './screens/Home';
 import SetGoal from './screens/SetGoal';
+import AddMoney from './screens/AddMoney';
 import SelectCheckupBuddy from './screens/SelectCheckupBuddy';
 import PaymentReceived from './screens/PaymentReceived';
 
@@ -13,7 +14,7 @@ const DoDTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: '#fff',
+    background: 'rgb(241, 249, 255)',
   },
 };
 
@@ -25,6 +26,7 @@ const App: () => React$Node = () => {
         screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="SetGoal" component={SetGoal} />
+        <Stack.Screen name="AddMoney" component={AddMoney} />
         <Stack.Screen
           name="SelectCheckupBuddy"
           component={SelectCheckupBuddy}

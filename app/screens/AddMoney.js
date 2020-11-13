@@ -4,32 +4,29 @@ import { SafeAreaView, View } from 'react-native';
 import { ScreenStyles as styles } from './styles';
 import Button from '../components/Button/Button';
 import ScreenTitle from '../components/ScreenTitle/ScreenTitle';
-import TextInput from '../components/TextInput/TextInput';
+import MoneySelector from '../components/MoneySelector/MoneySelector';
 
-const SetGoal = ({ navigation }) => {
+const AddMoney = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
         <View style={styles.header}>
           <ScreenTitle
-            mainText="Aan welk doel wil je werken?"
-            subText="Beschrijf het doel waar je aan wilt werken in 1 zin."
+            mainText="Hoeveel geld zet je in?"
+            subText="Je krijgt je geld alleen terug als je je doel hebt behaald."
           />
         </View>
         <View style={styles.body}>
-          <TextInput label="Je doel" />
+          <MoneySelector />
         </View>
         <View style={styles.footer}>
           <Button onPress={navigation.goBack} inverted label="Vorige" />
           <View style={styles.footerSpacer} />
-          <Button
-            label="Volgende"
-            onPress={() => navigation.navigate('AddMoney')}
-          />
+          <Button label="Volgende" onPress={() => navigation.navigate('')} />
         </View>
       </View>
     </SafeAreaView>
   );
 };
 
-export default SetGoal;
+export default AddMoney;
