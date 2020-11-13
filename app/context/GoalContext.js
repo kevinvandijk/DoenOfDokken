@@ -6,6 +6,8 @@ const initialState = {
   description: null,
   checkupBuddy: null,
   money: 15,
+  startDate: new Date(),
+  endDate: null,
 };
 
 const reducer = (state, action) => {
@@ -27,6 +29,16 @@ const reducer = (state, action) => {
         ...state,
         money: action.money,
       };
+
+    case 'SET_DATES':
+      return {
+        ...state,
+        startDate: action.startDate,
+        endDate: action.endDate,
+      };
+
+    default:
+      return state;
   }
 };
 
