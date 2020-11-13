@@ -44,7 +44,7 @@ const SetGoal = ({ navigation }) => {
           <TextInput
             label="Je doel"
             value={goalDescription}
-            onChange={(text) => onChangeGoalDescription(text)}
+            onChange={onChangeGoalDescription}
           />
         </View>
         <View style={styles.footer}>

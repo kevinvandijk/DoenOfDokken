@@ -47,7 +47,7 @@ const SelectCheckupBuddy = ({ navigation }) => {
           <TextInput
             label="E-MAIL CONTROLE BUDDY"
             type="email"
-            onChange={(text) => onChangeCheckupBuddy(text)}
+            onChange={onChangeCheckupBuddy}
           />
         </View>
         <View style={styles.footer}>
