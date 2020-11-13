@@ -22,13 +22,18 @@ if (Platform.OS === 'android') {
   locale = NativeModules.I18nManager.localeIdentifier.replace(/_/, '-');
 }
 
-const DateRangePicker = () => {
+const DateRangePicker = ({
+  startDate,
+  changeStartDate,
+  endDate,
+  changeEndDate,
+}) => {
   const today = new Date();
-  const defaultEndDate = new Date(today);
+  const defaultEndDate = new Date(startDate);
   defaultEndDate.setDate(defaultEndDate.getDate() + 7);
 
-  const [startDate, setStartDate] = useState(today);
-  const [endDate, setEndDate] = useState(null);
+  // const [startDate, setStartDate] = useState(today);
+  // const [endDate, setEndDate] = useState(null);
   const [showPicker, setShowPicker] = useState('none');
 
   const onChange = (event, selectedDate) => {
@@ -37,12 +42,13 @@ const DateRangePicker = () => {
     setShowPicker('none');
 
     if (type === 'start') {
-      setStartDate(selectedDate || startDate);
+      changeStartDate(selectedDate || startDate);
+      // setStartDate(selectedDate || startDate);
       if (selectedDate && endDate && selectedDate > endDate) {
-        setEndDate(null);
+        changeEndDate(null);
       }
     } else if (type === 'end') {
-      setEndDate(selectedDate || endDate);
+      changeEndDate(selectedDate || endDate);
     }
   };
 
