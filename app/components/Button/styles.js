@@ -13,7 +13,7 @@ const ButtonStyles = StyleSheet.create({
   },
 
   containerInverted: {
-    backgroundColor: '#fff',
+    backgroundColor: '#rgb(241, 249, 255)',
   },
 
   containerCompact: {
