@@ -17,6 +17,8 @@ const TextInput = ({ label, type, value, onChange }) => {
       clearTextOnFocus={!value}
       keyboardType={keyboardType}
       autoCompleteType={autoCompleteType}
+      textContentType={type === 'email' ? 'emailAddress' : 'none'}
+      autoCapitalize={type === 'email' ? 'none' : 'sentences'}
     />
   );
 };

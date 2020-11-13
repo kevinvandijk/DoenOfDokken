@@ -1,12 +1,39 @@
-import React from 'react';
-import { SafeAreaView, View } from 'react-native';
+import React, { useContext, useState } from 'react';
+import { Alert, SafeAreaView, View } from 'react-native';
 
 import { ScreenStyles as styles } from './styles';
+import { GoalContext } from '../context/GoalContext';
 import Button from '../components/Button/Button';
 import ScreenTitle from '../components/ScreenTitle/ScreenTitle';
 import TextInput from '../components/TextInput/TextInput';
 
 const SelectCheckupBuddy = ({ navigation }) => {
+  const { goal, dispatch } = useContext(GoalContext);
+  const [checkupBuddy, onChangeCheckupBuddy] = useState(goal.checkupBuddy);
+
+  const saveValue = (value) => {
+    dispatch({ type: 'SET_GOAL_DESCRIPTION', checkupBuddy: value });
+  };
+
+  const previousScreen = () => {
+    saveValue(checkupBuddy || null);
+
+    navigation.goBack();
+  };
+
+  const nextScreen = () => {
+    if (!checkupBuddy) {
+      Alert.alert(
+        'Geen controle buddy ingevuld',
+        'Vul het e-mailadres van je controle buddy in om verder te gaan.',
+      );
+      return;
+    }
+
+    saveValue();
+    navigation.navigate('PaymentReceived');
+  };
+
   return (
     <SafeAreaView style={styles.safeContainer}>
       <View style={styles.container}>
@@ -17,15 +44,16 @@ const SelectCheckupBuddy = ({ navigation }) => {
           />
         </View>
         <View style={styles.body}>
-          <TextInput label="E-MAIL CONTROLE BUDDY" type="email" />
+          <TextInput
+            label="E-MAIL CONTROLE BUDDY"
+            type="email"
+            onChange={(text) => onChangeCheckupBuddy(text)}
+          />
         </View>
         <View style={styles.footer}>
-          <Button onPress={navigation.goBack} inverted label="Vorige" />
+          <Button onPress={previousScreen} inverted label="Vorige" />
           <View style={styles.footerSpacer} />
-          <Button
-            label="Volgende"
-            onPress={() => navigation.navigate('PaymentReceived')}
-          />
+          <Button label="Volgende" onPress={nextScreen} />
         </View>
       </View>
     </SafeAreaView>

@@ -4,6 +4,7 @@ export const GoalContext = createContext();
 
 const initialState = {
   description: null,
+  checkupBuddy: null,
 };
 
 const reducer = (state, action) => {

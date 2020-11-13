@@ -20,6 +20,7 @@ const SetGoal = ({ navigation }) => {
 
     navigation.goBack();
   };
+
   const nextScreen = () => {
     if (!goalDescription) {
       Alert.alert('Geen doel ingevuld', 'Vul een doel in om verder te gaan.');
