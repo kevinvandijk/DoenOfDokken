@@ -48,7 +48,7 @@ const Overview = ({ navigation }) => {
           <Button onPress={() => navigation.goBack()} inverted label="Vorige" />
           <View style={styles.footerSpacer} />
           <Button
-            label="Volgende"
+            label="Betalen"
             onPress={() => navigation.navigate('PaymentReceived')}
           />
         </View>
